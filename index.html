@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashwini Rajale — Learning & Development Specialist</title>
+<meta name="description" content="Ashwini Rajale — Learning & Development Specialist and Talent Development leader. 5+ years scaling enterprise learning across 35+ countries.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --indigo:#5B4FE5;
+  --indigo-deep:#4A3FD1;
+  --indigo-tint:#F4F2FF;
+  --orange:#FF9F40;
+  --orange-deep:#F58A1F;
+  --ink:#1A1A2E;
+  --slate:#6B7280;
+  --slate-light:#9CA3AF;
+  --white:#FFFFFF;
+  --line: rgba(26,26,46,0.08);
+
+  --bg: var(--white);
+  --bg-tint: var(--indigo-tint);
+  --text: var(--ink);
+  --text-muted: var(--slate);
+
+  --font-display:'Sora', sans-serif;
+  --font-body:'Inter', sans-serif;
+
+  --container:1180px;
+  --r-lg:28px;
+  --r-md:20px;
+  --r-sm:14px;
+  --transition:0.35s cubic-bezier(.22,.61,.36,1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--font-body);
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px;}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.001ms !important;transition-duration:0.001ms !important;}
+  html{scroll-behavior:auto;}
+}
+
+.wrap{max-width:var(--container);margin:0 auto;padding:0 32px;}
+@media (max-width:640px){.wrap{padding:0 20px;}}
+
+.eyebrow{
+  font-family:var(--font-display);
+  font-size:0.78rem;font-weight:700;
+  letter-spacing:0.04em;text-transform:uppercase;
+  color:var(--indigo);
+  margin-bottom:14px;
+}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;letter-spacing:-0.01em;}
+.section-title{font-size:clamp(1.7rem,3.2vw,2.4rem);line-height:1.18;margin-bottom:14px;color:var(--text);}
+.section-sub{color:var(--text-muted);font-size:1.02rem;max-width:600px;margin-bottom:48px;}
+
+section{padding:96px 0;position:relative;}
+@media (max-width:768px){section{padding:64px 0;}}
+
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 28px;border-radius:50px;
+  font-size:0.92rem;font-weight:600;font-family:var(--font-body);
+  transition:all 0.3s ease;white-space:nowrap;
+}
+.btn-primary{background:var(--orange);color:var(--white);box-shadow:0 8px 20px rgba(255,159,64,0.35);}
+.btn-primary:hover{background:var(--orange-deep);transform:translateY(-2px);box-shadow:0 12px 24px rgba(255,159,64,0.45);}
+.btn-outline{border:1.5px solid rgba(255,255,255,0.6);color:var(--white);}
+.btn-outline:hover{background:rgba(255,255,255,0.12);}
+.btn-dark-outline{border:1.5px solid var(--line);color:var(--text);}
+.btn-dark-outline:hover{border-color:var(--indigo);color:var(--indigo);}
+.btn-link{color:var(--indigo);font-weight:600;display:inline-flex;align-items:center;gap:6px;}
+.btn-link svg{transition:transform 0.3s;}
+.btn-link:hover svg{transform:translateX(3px);}
+
+/* ============ NAV ============ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:20px 0;transition:all var(--transition);
+}
+.nav .wrap{
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(255,255,255,0.0);
+  border-radius:50px;
+  padding:10px 10px 10px 24px;
+  transition:all var(--transition);
+}
+.nav.scrolled .wrap{
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(14px);
+  box-shadow:0 8px 30px rgba(26,26,46,0.08);
+}
+.nav-logo{font-family:var(--font-display);font-weight:800;font-size:1.2rem;color:var(--ink);}
+.nav-logo span{color:var(--indigo);}
+.nav.scrolled .nav-logo, .nav.scrolled .nav-links a{color:var(--ink);}
+.nav:not(.scrolled) .nav-logo, .nav:not(.scrolled) .nav-links a{color:var(--white);}
+.nav-links{display:flex;gap:30px;align-items:center;}
+.nav-links a{font-size:0.88rem;font-weight:600;transition:color 0.25s;}
+.nav-links a:hover{color:var(--orange);}
+.nav-actions{display:flex;align-items:center;gap:10px;}
+.nav-cta{display:none;}
+@media (min-width:900px){.nav-cta{display:inline-flex;padding:11px 22px;}}
+.mobile-toggle{display:none;}
+.nav:not(.scrolled) .mobile-toggle{color:var(--white);}
+.nav.scrolled .mobile-toggle{color:var(--ink);}
+@media (max-width:899px){
+  .nav-links{display:none;}
+  .mobile-toggle{display:flex;}
+}
+.mobile-menu{
+  position:fixed;inset:0;background:var(--indigo);z-index:1100;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;
+  transform:translateY(-100%);transition:transform 0.45s cubic-bezier(.22,.61,.36,1);
+}
+.mobile-menu.open{transform:translateY(0);}
+.mobile-menu a{color:var(--white);font-size:1.4rem;font-family:var(--font-display);font-weight:700;}
+.mobile-close{position:absolute;top:26px;right:26px;color:var(--white);}
+
+/* ============ HERO ============ */
+.hero{
+  background:linear-gradient(160deg, var(--indigo) 0%, var(--indigo-deep) 100%);
+  color:var(--white);
+  padding-top:150px;padding-bottom:60px;
+  position:relative;overflow:hidden;
+}
+.hero-blob{position:absolute;border-radius:50%;opacity:0.9;}
+.hero-blob.b1{width:380px;height:380px;background:var(--orange);top:-120px;right:-80px;filter:blur(0px);opacity:0.95;}
+.hero-blob.b2{width:160px;height:160px;background:rgba(255,255,255,0.08);bottom:40px;left:-40px;}
+.hero-dot-grid{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.12) 1.5px, transparent 1.5px);background-size:26px 26px;mask-image:radial-gradient(ellipse 60% 50% at 30% 30%, black, transparent);pointer-events:none;}
+
+.hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;position:relative;z-index:2;}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr;gap:48px;}}
+
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,0.14);
+  padding:8px 16px;border-radius:50px;
+  font-size:0.82rem;font-weight:600;margin-bottom:24px;
+  opacity:0;animation:fadeUp 0.7s ease forwards;animation-delay:0.1s;
+}
+.hero-eyebrow .pulse-dot{width:7px;height:7px;border-radius:50%;background:var(--orange);animation:pulse 1.8s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+
+.hero h1{
+  font-size:clamp(2.2rem,4.6vw,3.4rem);line-height:1.12;font-weight:800;margin-bottom:22px;
+  opacity:0;animation:fadeUp 0.8s ease forwards;animation-delay:0.2s;
+}
+.hero h1 .accent{color:var(--orange);}
+.hero-subhead{
+  font-size:0.95rem;font-weight:600;color:rgba(255,255,255,0.85);
+  margin-bottom:20px;display:flex;flex-wrap:wrap;gap:6px 0;
+  opacity:0;animation:fadeUp 0.8s ease forwards;animation-delay:0.32s;
+}
+.hero-subhead .dot{color:var(--orange);margin:0 9px;}
+.hero-intro{
+  font-size:1.06rem;color:rgba(255,255,255,0.82);max-width:540px;margin-bottom:34px;
+  opacity:0;animation:fadeUp 0.8s ease forwards;animation-delay:0.42s;
+}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp 0.8s ease forwards;animation-delay:0.52s;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+
+/* Portrait */
+.hero-portrait-wrap{position:relative;display:flex;justify-content:center;opacity:0;animation:fadeUp 0.9s ease forwards;animation-delay:0.3s;}
+.portrait-orbit{
+  position:relative;width:340px;height:340px;
+}
+@media (max-width:480px){.portrait-orbit{width:280px;height:280px;}}
+.orbit-ring{
+  position:absolute;inset:-22px;border:2px dashed rgba(255,255,255,0.35);border-radius:50%;
+  animation:spin 40s linear infinite;
+}
+@keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+.portrait-circle{
+  width:100%;height:100%;border-radius:50%;overflow:hidden;
+  border:6px solid rgba(255,255,255,0.18);
+  box-shadow:0 30px 60px rgba(0,0,0,0.25);
+}
+.portrait-circle img{width:100%;height:100%;object-fit:cover;}
+.orbit-shape{position:absolute;border-radius:50%;}
+.orbit-shape.s1{width:18px;height:18px;background:var(--orange);top:6%;left:-6%;}
+.orbit-shape.s2{width:12px;height:12px;border:2px solid rgba(255,255,255,0.6);background:transparent;bottom:8%;right:-4%;}
+.orbit-shape.s3{width:10px;height:10px;background:rgba(255,255,255,0.5);top:55%;right:-8%;}
+
+.float-badge{
+  position:absolute;background:var(--white);color:var(--ink);
+  border-radius:16px;padding:14px 18px;
+  box-shadow:0 16px 32px rgba(26,26,46,0.18);
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--font-body);
+}
+.float-badge.badge-top{top:0;left:-10px;animation:floatY 4s ease-in-out infinite;}
+.float-badge.badge-bottom{bottom:6%;right:-16px;animation:floatY 4.5s ease-in-out infinite reverse;}
+@keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+.badge-icon{
+  width:36px;height:36px;border-radius:10px;
+  background:var(--indigo-tint);color:var(--indigo);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.badge-num{font-family:var(--font-display);font-weight:800;font-size:1.05rem;line-height:1;}
+.badge-lbl{font-size:0.72rem;color:var(--text-muted);font-weight:600;}
+
+@media (max-width:560px){
+  .float-badge{padding:10px 14px;}
+  .float-badge.badge-top{left:-4px;}
+  .float-badge.badge-bottom{right:-6px;}
+}
+
+/* KPI strip */
+.kpi-strip{margin-top:80px;position:relative;z-index:2;}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+@media (max-width:900px){.kpi-grid{grid-template-columns:repeat(2,1fr);}}
+.kpi-cell{
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.16);
+  border-radius:var(--r-md);
+  padding:22px 20px;
+  transition:background 0.3s;
+}
+.kpi-cell:hover{background:rgba(255,255,255,0.16);}
+.kpi-num{font-family:var(--font-display);font-size:clamp(1.5rem,2.2vw,1.9rem);font-weight:800;color:var(--white);line-height:1;margin-bottom:6px;}
+.kpi-num .suffix{color:var(--orange);}
+.kpi-lbl{font-size:0.8rem;color:rgba(255,255,255,0.75);font-weight:500;}
+
+/* ============ ABOUT ============ */
+.about{background:var(--white);}
+.about-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px;align-items:center;}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr;gap:40px;}}
+.about-visual{position:relative;}
+.about-photo-card{
+  border-radius:var(--r-lg);overflow:hidden;
+  aspect-ratio:4/4.6;position:relative;
+  box-shadow:0 24px 50px rgba(91,79,229,0.18);
+}
+.about-photo-card img{width:100%;height:100%;object-fit:cover;}
+.about-deco-1{position:absolute;width:90px;height:90px;border-radius:50%;background:var(--orange);top:-30px;right:-30px;z-index:-1;opacity:0.9;}
+.about-deco-2{position:absolute;width:50px;height:50px;border-radius:14px;background:var(--indigo-tint);bottom:-20px;left:-20px;z-index:-1;transform:rotate(15deg);}
+.about-stat-pill{
+  position:absolute;bottom:24px;left:24px;
+  background:var(--white);border-radius:16px;padding:14px 18px;
+  box-shadow:0 16px 32px rgba(26,26,46,0.15);
+  display:flex;align-items:center;gap:10px;
+}
+.about-lead{font-family:var(--font-display);font-size:1.4rem;line-height:1.4;color:var(--text);font-weight:700;margin-bottom:20px;}
+.about-body p{color:var(--text-muted);margin-bottom:16px;font-size:1rem;}
+.about-body strong{color:var(--text);font-weight:700;}
+.competency-pills{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px;}
+.competency-pill{
+  font-size:0.84rem;font-weight:600;color:var(--indigo);
+  background:var(--indigo-tint);padding:9px 16px;border-radius:50px;
+}
+
+/* ============ JOURNEY ============ */
+.journey{background:var(--bg-tint);}
+.journey-path{margin-top:8px;}
+.journey-node{
+  display:grid;grid-template-columns:200px 1fr;gap:40px;
+  padding-bottom:36px;position:relative;
+}
+@media (max-width:780px){.journey-node{grid-template-columns:1fr;gap:16px;}}
+.journey-meta{padding-top:6px;}
+.journey-org{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--text);margin-bottom:4px;}
+.journey-dates{
+  display:inline-block;font-size:0.76rem;font-weight:700;color:var(--orange-deep);
+  background:rgba(255,159,64,0.14);padding:4px 10px;border-radius:50px;margin-top:4px;
+}
+.journey-place{font-size:0.82rem;color:var(--text-muted);margin-top:6px;}
+
+.journey-card{
+  background:var(--white);border-radius:var(--r-md);
+  padding:30px 32px;
+  box-shadow:0 4px 20px rgba(26,26,46,0.05);
+  border:1px solid var(--line);
+  transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+.journey-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(91,79,229,0.12);}
+.journey-role{font-family:var(--font-display);font-size:1.2rem;font-weight:700;margin-bottom:14px;color:var(--text);}
+.journey-resp{margin-bottom:16px;}
+.journey-resp li{position:relative;padding-left:20px;margin-bottom:9px;font-size:0.92rem;color:var(--text-muted);}
+.journey-resp li::before{content:'';position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--indigo);}
+.journey-achieve{background:var(--indigo-tint);border-radius:14px;padding:16px 18px;margin-top:16px;}
+.journey-achieve-title{font-size:0.74rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--indigo);margin-bottom:10px;}
+.journey-achieve li{font-size:0.87rem;color:var(--text);padding-left:18px;position:relative;margin-bottom:6px;}
+.journey-achieve li::before{content:'✓';position:absolute;left:0;color:var(--indigo);font-weight:700;font-size:0.78rem;}
+
+/* ============ ENTERPRISE ============ */
+.enterprise{background:linear-gradient(160deg, var(--indigo) 0%, var(--indigo-deep) 100%);color:var(--white);position:relative;overflow:hidden;}
+.enterprise-blob{position:absolute;width:320px;height:320px;border-radius:50%;background:var(--orange);opacity:0.85;bottom:-160px;left:-100px;}
+.enterprise .eyebrow{color:rgba(255,255,255,0.85);}
+.enterprise .section-title{color:var(--white);}
+.enterprise .section-sub{color:rgba(255,255,255,0.7);}
+.enterprise-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;position:relative;z-index:2;}
+@media (max-width:900px){.enterprise-grid{grid-template-columns:1fr;}}
+.enterprise-list li{position:relative;padding-left:24px;margin-bottom:14px;font-size:0.94rem;color:rgba(255,255,255,0.85);}
+.enterprise-list li::before{content:'';position:absolute;left:0;top:9px;width:10px;height:2px;background:var(--orange);border-radius:2px;}
+.tech-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+@media (max-width:640px){.tech-cards{grid-template-columns:repeat(2,1fr);}}
+.tech-card{
+  background:rgba(255,255,255,0.1);border-radius:14px;padding:16px 12px;text-align:center;
+  font-size:0.8rem;font-weight:600;color:var(--white);transition:all 0.3s;
+}
+.tech-card:hover{background:rgba(255,255,255,0.2);transform:translateY(-3px);}
+
+/* ============ EXPERTISE ============ */
+.expertise{background:var(--white);}
+.expertise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+@media (max-width:900px){.expertise-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.expertise-grid{grid-template-columns:1fr;}}
+.expertise-card{
+  background:var(--bg-tint);border-radius:var(--r-md);padding:26px 22px;
+  transition:all 0.3s ease;
+}
+.expertise-card:hover{background:var(--white);box-shadow:0 16px 36px rgba(91,79,229,0.14);transform:translateY(-4px);}
+.expertise-icon{
+  width:44px;height:44px;border-radius:12px;
+  background:var(--white);color:var(--indigo);
+  display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+  box-shadow:0 4px 12px rgba(91,79,229,0.12);
+}
+.expertise-card:hover .expertise-icon{background:var(--orange);color:var(--white);}
+.expertise-name{font-family:var(--font-display);font-size:0.98rem;font-weight:700;color:var(--text);}
+
+/* ============ EXTRACURRICULAR ============ */
+.extra{background:var(--bg-tint);}
+.extra-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+@media (max-width:900px){.extra-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.extra-grid{grid-template-columns:1fr;}}
+.extra-card{
+  background:var(--white);border-radius:var(--r-md);padding:26px 24px;
+  border:1px solid var(--line);
+  transition:all 0.3s ease;
+}
+.extra-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(255,159,64,0.16);border-color:var(--orange);}
+.extra-icon{
+  width:44px;height:44px;border-radius:12px;
+  background:rgba(255,159,64,0.14);color:var(--orange-deep);
+  display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+}
+.extra-card:hover .extra-icon{background:var(--orange);color:var(--white);}
+.extra-name{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--text);margin-bottom:6px;}
+.extra-desc{font-size:0.86rem;color:var(--text-muted);line-height:1.5;}
+
+/* ============ CASE STUDIES ============ */
+.case-studies{background:var(--bg-tint);}
+.case-tabs{display:flex;gap:10px;margin-bottom:36px;flex-wrap:wrap;}
+.case-tab{
+  font-size:0.86rem;font-weight:600;padding:11px 20px;border-radius:50px;
+  background:var(--white);color:var(--text-muted);border:1px solid var(--line);
+  transition:all 0.3s;
+}
+.case-tab.active{background:var(--indigo);color:var(--white);border-color:var(--indigo);}
+.case-tab:hover:not(.active){border-color:var(--indigo);color:var(--indigo);}
+
+.case-panel{display:none;}
+.case-panel.active{display:block;animation:fadeUp 0.5s ease;}
+.case-card{
+  background:var(--white);border-radius:var(--r-lg);padding:44px;
+  display:grid;grid-template-columns:1fr 1fr;gap:40px;
+  box-shadow:0 4px 24px rgba(26,26,46,0.05);
+}
+@media (max-width:900px){.case-card{grid-template-columns:1fr;padding:30px 26px;}}
+.case-card-header{grid-column:1/-1;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;margin-bottom:6px;}
+.case-title{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--text);}
+.case-tools{display:flex;gap:8px;flex-wrap:wrap;}
+.case-tool-pill{font-size:0.7rem;font-weight:600;background:var(--indigo-tint);color:var(--indigo);padding:5px 12px;border-radius:50px;}
+.case-block{margin-bottom:20px;}
+.case-block-label{font-size:0.74rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:8px;}
+.case-block p{font-size:0.92rem;color:var(--text-muted);}
+.case-kpis{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px;border-top:1px solid var(--line);padding-top:26px;}
+@media (max-width:640px){.case-kpis{grid-template-columns:repeat(2,1fr);}}
+.case-kpi-num{font-family:var(--font-display);font-size:1.5rem;color:var(--indigo);font-weight:800;}
+.case-kpi-lbl{font-size:0.78rem;color:var(--text-muted);margin-top:4px;}
+
+/* ============ SKILLS ============ */
+.skills{background:var(--white);}
+.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px 56px;}
+@media (max-width:780px){.skills-grid{grid-template-columns:1fr;gap:24px;}}
+.skill-row-top{display:flex;justify-content:space-between;margin-bottom:9px;font-size:0.9rem;}
+.skill-row-top span:first-child{color:var(--text);font-weight:600;}
+.skill-row-top span:last-child{font-weight:700;color:var(--indigo);font-size:0.85rem;}
+.skill-bar-track{height:8px;background:var(--bg-tint);border-radius:8px;overflow:hidden;}
+.skill-bar-fill{height:100%;border-radius:8px;width:0;background:linear-gradient(90deg, var(--indigo), var(--orange));transition:width 1.1s cubic-bezier(.22,.61,.36,1);}
+
+/* ============ STACK ============ */
+.stack{background:var(--bg-tint);}
+.stack-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+@media (max-width:780px){.stack-cols{grid-template-columns:1fr;gap:28px;}}
+.stack-col-title{font-size:0.78rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--indigo);margin-bottom:16px;}
+.stack-pills{display:flex;flex-wrap:wrap;gap:10px;}
+.stack-pill{font-size:0.85rem;font-weight:600;color:var(--text);background:var(--white);padding:9px 16px;border-radius:50px;border:1px solid var(--line);transition:all 0.3s;}
+.stack-pill:hover{border-color:var(--orange);color:var(--orange-deep);transform:translateY(-2px);}
+
+/* ============ CERTS & AWARDS ============ */
+.certs{background:var(--white);}
+.certs-awards-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;}
+@media (max-width:900px){.certs-awards-grid{grid-template-columns:1fr;gap:36px;}}
+.cert-list,.award-list{display:flex;flex-direction:column;gap:14px;}
+.cert-item,.award-item{
+  display:flex;align-items:center;gap:14px;
+  background:var(--bg-tint);border-radius:16px;padding:16px 18px;
+}
+.cert-item-icon,.award-item-icon{
+  width:40px;height:40px;border-radius:12px;background:var(--white);color:var(--indigo);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 10px rgba(91,79,229,0.1);
+}
+.award-item-icon{color:var(--orange-deep);}
+.cert-name,.award-name{font-family:var(--font-display);font-weight:700;font-size:0.92rem;color:var(--text);}
+.cert-issuer,.award-issuer{font-size:0.78rem;color:var(--text-muted);}
+
+/* ============ CONTACT ============ */
+.contact{background:linear-gradient(160deg, var(--indigo) 0%, var(--indigo-deep) 100%);color:var(--white);position:relative;overflow:hidden;}
+.contact-blob{position:absolute;width:300px;height:300px;border-radius:50%;background:var(--orange);opacity:0.8;top:-140px;right:-100px;}
+.contact .eyebrow{color:rgba(255,255,255,0.85);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;position:relative;z-index:2;}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr;gap:36px;}}
+.contact-title{font-family:var(--font-display);font-size:clamp(1.7rem,3vw,2.2rem);font-weight:800;margin-bottom:16px;line-height:1.22;}
+.contact-sub{color:rgba(255,255,255,0.75);margin-bottom:32px;max-width:440px;}
+.contact-links{display:flex;flex-direction:column;gap:16px;margin-bottom:30px;}
+.contact-link{display:flex;align-items:center;gap:14px;font-size:0.94rem;font-weight:500;}
+.contact-link-icon{
+  width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,0.14);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.contact-link a:hover{color:var(--orange);}
+
+.contact-form{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.16);border-radius:var(--r-lg);padding:34px;}
+.form-row{margin-bottom:16px;}
+.form-row label{display:block;font-size:0.8rem;font-weight:600;margin-bottom:7px;}
+.form-row input,.form-row textarea{
+  width:100%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);
+  border-radius:12px;padding:12px 16px;color:var(--white);font-family:inherit;font-size:0.92rem;transition:border-color 0.3s;
+}
+.form-row input::placeholder,.form-row textarea::placeholder{color:rgba(255,255,255,0.5);}
+.form-row input:focus,.form-row textarea:focus{outline:none;border-color:var(--orange);}
+.form-row textarea{resize:vertical;min-height:96px;}
+.form-submit{width:100%;justify-content:center;margin-top:4px;}
+.form-note{font-size:0.74rem;color:rgba(255,255,255,0.55);margin-top:14px;text-align:center;}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--ink);color:rgba(255,255,255,0.6);padding:32px 0;}
+.footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:var(--font-display);color:var(--white);font-weight:700;font-size:1rem;}
+.footer-logo span{color:var(--orange);}
+.footer-links{display:flex;gap:22px;font-size:0.84rem;}
+.footer-links a:hover{color:var(--orange);}
+.footer-fineprint{font-size:0.78rem;}
+
+.toast{
+  position:fixed;bottom:28px;right:28px;z-index:3000;
+  background:var(--ink);color:var(--white);padding:16px 22px;border-radius:14px;
+  border-left:3px solid var(--orange);box-shadow:0 16px 32px rgba(0,0,0,0.25);font-size:0.88rem;
+  transform:translateY(120%);opacity:0;transition:all 0.4s cubic-bezier(.22,.61,.36,1);
+}
+.toast.show{transform:translateY(0);opacity:1;}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="nav-logo">Ashwini <span>Rajale</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#journey">Journey</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#case-studies">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="Ashwini_Rajale_CV.pdf" download class="btn btn-primary nav-cta">Download CV</a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Open menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <a href="#about">About</a>
+  <a href="#journey">Journey</a>
+  <a href="#expertise">Expertise</a>
+  <a href="#case-studies">Work</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero-blob b1"></div>
+  <div class="hero-blob b2"></div>
+  <div class="hero-dot-grid"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow"><span class="pulse-dot"></span> Available for L&amp;D &amp; Talent Development roles</div>
+        <h1>Hi, I'm Ashwini — I turn learning into <span class="accent">business performance.</span></h1>
+        <div class="hero-subhead">
+          <span>Learning Operations</span><span class="dot">•</span>
+          <span>Talent Development</span><span class="dot">•</span>
+          <span>Learning Analytics</span><span class="dot">•</span>
+          <span>Employee Experience</span>
+        </div>
+        <p class="hero-intro">I design scalable learning ecosystems that bridge business need with technical depth — partnering with senior stakeholders and SMEs across 35+ countries to make training measurable.</p>
+        <div class="hero-ctas">
+          <a href="#case-studies" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+      </div>
+      <div class="hero-portrait-wrap">
+        <div class="portrait-orbit">
+          <div class="orbit-ring"></div>
+          <div class="orbit-shape s1"></div>
+          <div class="orbit-shape s2"></div>
+          <div class="orbit-shape s3"></div>
+          <div class="portrait-circle">
+            <img src="ashwini-photo.jpg" alt="Ashwini Rajale">
+          </div>
+          <div class="float-badge badge-top">
+            <div class="badge-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div class="badge-num">35+</div><div class="badge-lbl">Countries</div></div>
+          </div>
+          <div class="float-badge badge-bottom">
+            <div class="badge-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.2H22l-6 4.4 2.3 7.1L12 16.3 5.7 20.7 8 13.6 2 9.2h7.6z"/></svg></div>
+            <div><div class="badge-num">5+</div><div class="badge-lbl">Years Experience</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kpi-strip">
+      <div class="kpi-grid">
+        <div class="kpi-cell"><div class="kpi-num"><span class="count" data-target="550">0</span><span class="suffix">+</span></div><div class="kpi-lbl">Learning Programs Coordinated</div></div>
+        <div class="kpi-cell"><div class="kpi-num"><span class="count" data-target="1000">0</span><span class="suffix">+</span></div><div class="kpi-lbl">Compliance Sessions Delivered</div></div>
+        <div class="kpi-cell"><div class="kpi-num"><span class="count" data-target="8">0</span><span class="suffix">+</span></div><div class="kpi-lbl">Learning Platforms Managed</div></div>
+        <div class="kpi-cell"><div class="kpi-num"><span class="count" data-target="95">0</span><span class="suffix">%</span></div><div class="kpi-lbl">Engagement Calendar Success</div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-deco-1"></div>
+        <div class="about-deco-2"></div>
+        <div class="about-photo-card">
+          <img src="ashwini-photo.jpg" alt="Ashwini Rajale">
+        </div>
+        <div class="about-stat-pill">
+          <div class="badge-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+          <div><div class="badge-num" style="font-size:0.95rem;">Zero</div><div class="badge-lbl">Audit Non-Conformances</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow">About Me</div>
+        <p class="about-lead">From the factory floor to the boardroom dashboard — a five-year arc spent making learning measurable.</p>
+        <div class="about-body">
+          <p>Ashwini's path into Learning &amp; Development began on the shop floor — coordinating training compliance across <strong>four manufacturing plants</strong> at Varroc Engineering, where audit-ready documentation and apprentice development were non-negotiable. That operational discipline became the foundation for everything since.</p>
+          <p>At <strong>ALTEN India</strong>, the remit expanded into full-cycle ownership: building the annual L&amp;D strategy from organisation-wide needs analysis, coordinating <strong>550+ training programmes</strong>, and designing the employee engagement calendar that lifted post-training performance by <strong>70%</strong>.</p>
+          <p>Today, as <strong>Technology Learning Specialist at HSBC</strong>, Ashwini is the single point of contact for technical learning across <strong>35+ countries</strong> — administering 8+ platforms and translating it all into dashboards business leaders actually act on.</p>
+        </div>
+        <div class="competency-pills">
+          <span class="competency-pill">Learning Strategy</span>
+          <span class="competency-pill">Learning Operations</span>
+          <span class="competency-pill">Employee Experience</span>
+          <span class="competency-pill">Learning Technology</span>
+          <span class="competency-pill">Learning Analytics</span>
+          <span class="competency-pill">Stakeholder Management</span>
+          <span class="competency-pill">Instructional Design</span>
+          <span class="competency-pill">Vendor Management</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOURNEY ============ -->
+<section class="journey" id="journey">
+  <div class="wrap">
+    <div class="eyebrow">Professional Journey</div>
+    <h2 class="section-title">A learning pathway, built the way she builds them</h2>
+    <p class="section-sub">Three roles, one throughline — from operational discipline on the factory floor to strategic learning leadership at enterprise scale.</p>
+
+    <div class="journey-path">
+      <div class="journey-node">
+        <div class="journey-meta">
+          <div class="journey-org">HSBC Software Technology</div>
+          <span class="journey-dates">Mar 2026 — Present</span>
+          <div class="journey-place">Pune, India</div>
+        </div>
+        <div class="journey-card">
+          <h3 class="journey-role">Technology Learning Specialist</h3>
+          <ul class="journey-resp">
+            <li>SPOC for technical training across global participants; lead training needs identification to align interventions with business and role requirements</li>
+            <li>Manage the Graduate Training Program, onboarding, and induction — owning a smooth first-90-days experience</li>
+            <li>Deliver Global Mandatory Training (GMT) and compliance programmes with 100% completion documentation and audit readiness</li>
+            <li>Build and execute annual training calendars (90% success) and engagement calendars (95% success) aligned to business goals</li>
+            <li>Administer 8+ learning platforms — Udemy, Pluralsight, Moodle, Google Skills, LinkedIn Learning, HSBC's internal GTA</li>
+            <li>Own certification validation and reimbursement, including AWS and GCP career-advancement certifications</li>
+            <li>Maintain SharePoint learning portals and prepare monthly/quarterly dashboards for management</li>
+          </ul>
+          <div class="journey-achieve">
+            <div class="journey-achieve-title">Key Achievements</div>
+            <ul>
+              <li>Managing global L&amp;D across 35+ countries with zero delivery failures</li>
+              <li>Streamlined learning records across 6+ platforms</li>
+              <li>Reduced certification reimbursement turnaround time</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-node">
+        <div class="journey-meta">
+          <div class="journey-org">ALTEN India</div>
+          <span class="journey-dates">May 2022 — Jun 2025</span>
+          <div class="journey-place">Pune, India</div>
+        </div>
+        <div class="journey-card">
+          <h3 class="journey-role">Officer — Learning &amp; Development &amp; Employee Engagement</h3>
+          <ul class="journey-resp">
+            <li>Conducted organisation-wide Training Needs Analysis via stakeholder interviews, performance data, and competency assessments</li>
+            <li>Designed the annual learning strategy, training calendar, and budget</li>
+            <li>Coordinated 550+ training programmes end-to-end — scheduling, logistics, instructor coordination, post-training evaluation</li>
+            <li>Led LMS implementation and onboarding; managed a team of 4</li>
+            <li>Delivered 1,000+ mandatory compliance sessions (POSH, Code of Conduct, Safety) supporting all internal, external, and ISO audits</li>
+            <li>Designed and executed the annual Employee Engagement Calendar — 50+ engagement events and 20+ wellness programmes</li>
+            <li>Produced employer branding content (Canva, video) — newsletters, LinkedIn posts, flyers, campaigns</li>
+            <li>Built MRM/QRM dashboards in Power BI and Excel; managed vendor POs and invoicing</li>
+          </ul>
+          <div class="journey-achieve">
+            <div class="journey-achieve-title">Key Achievements</div>
+            <ul>
+              <li>70% improvement in post-training performance within 6 months</li>
+              <li>Zero audit non-conformances across 3 years</li>
+              <li>Introduced the "Employee First Impression" post-induction program</li>
+              <li>"Employee of the Month" (Aug 2024) · "Caught You Doing It Right" (Jun 2025)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-node">
+        <div class="journey-meta">
+          <div class="journey-org">Varroc Engineering Ltd.</div>
+          <span class="journey-dates">Dec 2020 — Apr 2022</span>
+          <div class="journey-place">Aurangabad, India</div>
+        </div>
+        <div class="journey-card">
+          <h3 class="journey-role">Human Resources Trainee</h3>
+          <ul class="journey-resp">
+            <li>Coordinated L&amp;D programmes across 4 manufacturing plants — schedules, attendance, audit-ready documentation</li>
+            <li>Supported Training Needs Identification across 3 departments; contributed to TPM training coordination</li>
+            <li>Played a key role in the Training Pillar under TPM, ensuring structured compliance documentation</li>
+            <li>Managed onboarding, induction, and HR administration for the contractual workforce with zero documentation errors during audits</li>
+          </ul>
+          <div class="journey-achieve">
+            <div class="journey-achieve-title">Key Achievements</div>
+            <ul>
+              <li>"SHABASH Award" 2021</li>
+              <li>Independently managed L&amp;D across 3 plants as a trainee — recognised by senior leadership</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ENTERPRISE TECHNICAL LEARNING ============ -->
+<section class="enterprise" id="enterprise">
+  <div class="enterprise-blob"></div>
+  <div class="wrap">
+    <div class="eyebrow">Enterprise Technical Learning</div>
+    <h2 class="section-title">Leading end-to-end technical learning solutions</h2>
+    <p class="section-sub">As Learning Program Lead, Ashwini collaborates with Subject Matter Experts carrying 15+ years of industry experience to design, implement, and continuously improve enterprise learning programs.</p>
+
+    <div class="enterprise-grid">
+      <div>
+        <ul class="enterprise-list">
+          <li>Conducting Training Needs Analysis (TNA) to surface real capability gaps</li>
+          <li>Consulting directly with business stakeholders and SMEs on learning priorities</li>
+          <li>Designing structured, role-based and persona-based learning pathways</li>
+          <li>Coordinating ILT, VILT, blended, and self-paced learning formats</li>
+          <li>Managing enterprise LMS platforms end-to-end</li>
+          <li>Measuring learning effectiveness through dashboards and analytics</li>
+          <li>Tracking certifications against business outcomes</li>
+          <li>Managing vendors, logistics, and global stakeholder communication</li>
+        </ul>
+      </div>
+      <div>
+        <div class="tech-cards">
+          <div class="tech-card">AWS</div>
+          <div class="tech-card">AI &amp; ML</div>
+          <div class="tech-card">Python</div>
+          <div class="tech-card">Java</div>
+          <div class="tech-card">Power BI</div>
+          <div class="tech-card">Cloud Tech</div>
+          <div class="tech-card">Data Analytics</div>
+          <div class="tech-card">Soft Skills</div>
+          <div class="tech-card">Leadership Dev.</div>
+          <div class="tech-card">POSH</div>
+          <div class="tech-card">Graduate Training</div>
+          <div class="tech-card">Compliance Learning</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CORE EXPERTISE ============ -->
+<section class="expertise" id="expertise">
+  <div class="wrap">
+    <div class="eyebrow">Core Expertise</div>
+    <h2 class="section-title">Eighteen disciplines, one operating philosophy</h2>
+    <p class="section-sub">Strategy through execution — the full stack of capabilities behind every learning program Ashwini leads.</p>
+    <div class="expertise-grid" id="expertiseGrid"></div>
+  </div>
+</section>
+
+<!-- ============ EXTRACURRICULAR & CREATIVE ACTIVITIES ============ -->
+<section class="extra" id="extracurricular">
+  <div class="wrap">
+    <div class="eyebrow">Beyond the Day Job</div>
+    <h2 class="section-title">Extracurricular &amp; creative activities</h2>
+    <p class="section-sub">A creative streak that feeds back into the day job — content, design, and storytelling skills picked up along the way.</p>
+    <div class="extra-grid">
+      <div class="extra-card">
+        <div class="extra-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="13.5" cy="6.5" r="0.5"/><circle cx="17.5" cy="10.5" r="0.5"/><circle cx="8.5" cy="7.5" r="0.5"/><circle cx="6.5" cy="12.5" r="0.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.672 0-.434-.18-.82-.385-1.103-.21-.29-.385-.6-.385-1.005 0-.926.746-1.672 1.672-1.672H16c3.314 0 6-2.686 6-6 0-5.523-4.477-10-10-10z"/></svg></div>
+        <div class="extra-name">Graphic Design for Events</div>
+        <p class="extra-desc">Designing visuals and signage for engagement events, town halls, and wellness programs.</p>
+      </div>
+      <div class="extra-card">
+        <div class="extra-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18"/><path d="M8 13h3M8 16h6"/></svg></div>
+        <div class="extra-name">Invitation &amp; Event Collateral Design</div>
+        <p class="extra-desc">Creating invitations and event collateral for company celebrations and milestone programs.</p>
+      </div>
+      <div class="extra-card">
+        <div class="extra-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3h18v14H3z"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <div class="extra-name">Employee Branding Flyers</div>
+        <p class="extra-desc">Producing employer branding flyers, newsletters, and LinkedIn campaign visuals using Canva.</p>
+      </div>
+      <div class="extra-card">
+        <div class="extra-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15l2 2 4-4"/></svg></div>
+        <div class="extra-name">Resume Writing &amp; Review</div>
+        <p class="extra-desc">Helping colleagues and apprentices sharpen resumes for internal mobility and external opportunities.</p>
+      </div>
+      <div class="extra-card">
+        <div class="extra-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3"/></svg></div>
+        <div class="extra-name">Video Editing</div>
+        <p class="extra-desc">Editing short-form videos for onboarding, engagement campaigns, and internal communications.</p>
+      </div>
+      <div class="extra-card">
+        <div class="extra-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg></div>
+        <div class="extra-name">Content Creation</div>
+        <p class="extra-desc">Writing and designing newsletters, social posts, and internal comms that carry a consistent brand voice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASE STUDIES ============ -->
+<section class="case-studies" id="case-studies">
+  <div class="wrap">
+    <div class="eyebrow">Featured Work</div>
+    <h2 class="section-title">Where strategy met scale</h2>
+    <p class="section-sub">Four programs that show the range — from global operations to analytics that changed how leadership saw learning.</p>
+
+    <div class="case-tabs" id="caseTabs">
+      <button class="case-tab active" data-case="0">Global Learning Operations</button>
+      <button class="case-tab" data-case="1">Employee First Impression</button>
+      <button class="case-tab" data-case="2">Certification Framework</button>
+      <button class="case-tab" data-case="3">Learning Analytics Dashboard</button>
+    </div>
+
+    <div class="case-panels">
+      <div class="case-panel active" data-panel="0">
+        <div class="case-card">
+          <div class="case-card-header">
+            <div class="case-title">Global Learning Operations — 35+ Countries, Zero Failures</div>
+            <div class="case-tools"><span class="case-tool-pill">HSBC GTA</span><span class="case-tool-pill">SharePoint</span><span class="case-tool-pill">Power BI</span></div>
+          </div>
+          <div>
+            <div class="case-block"><div class="case-block-label">Challenge</div><p>Technical training had to land consistently for participants spread across 35+ countries and time zones, each with different role requirements, compliance rules, and platform access.</p></div>
+            <div class="case-block"><div class="case-block-label">Approach</div><p>Acted as single point of contact, building standardised intake, scheduling, and communication workflows so no region depended on ad-hoc coordination.</p></div>
+          </div>
+          <div>
+            <div class="case-block"><div class="case-block-label">Solution</div><p>Centralised administration across 8+ platforms with shared reporting templates, giving every stakeholder one consistent view of delivery status.</p></div>
+            <div class="case-block"><div class="case-block-label">Business Impact</div><p>Enterprise-wide technical training now runs with full audit readiness and predictable delivery, regardless of region or scale.</p></div>
+          </div>
+          <div class="case-kpis">
+            <div><div class="case-kpi-num">35+</div><div class="case-kpi-lbl">Countries Supported</div></div>
+            <div><div class="case-kpi-num">8+</div><div class="case-kpi-lbl">Platforms Unified</div></div>
+            <div><div class="case-kpi-num">100%</div><div class="case-kpi-lbl">Completion Documentation</div></div>
+            <div><div class="case-kpi-num">0</div><div class="case-kpi-lbl">Delivery Failures</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-panel" data-panel="1">
+        <div class="case-card">
+          <div class="case-card-header">
+            <div class="case-title">The Employee First Impression Program</div>
+            <div class="case-tools"><span class="case-tool-pill">Survey Design</span><span class="case-tool-pill">Onboarding</span><span class="case-tool-pill">Excel</span></div>
+          </div>
+          <div>
+            <div class="case-block"><div class="case-block-label">Problem Statement</div><p>New hires across multiple ALTEN locations had no structured feedback loop after induction, so onboarding gaps went undetected until much later.</p></div>
+            <div class="case-block"><div class="case-block-label">Learning Solution</div><p>Designed a post-induction survey to capture first-quarter sentiment and flag friction points while they were still fixable.</p></div>
+          </div>
+          <div>
+            <div class="case-block"><div class="case-block-label">Implementation</div><p>Rolled out across all onboarding cohorts with a fast feedback-to-action cycle, feeding directly into induction redesign.</p></div>
+            <div class="case-block"><div class="case-block-label">Business Results</div><p>New hire satisfaction scores rose measurably within the first quarter of rollout, and the program became a standing part of onboarding.</p></div>
+          </div>
+          <div class="case-kpis">
+            <div><div class="case-kpi-num">Multi-site</div><div class="case-kpi-lbl">Rollout</div></div>
+            <div><div class="case-kpi-num">Q1</div><div class="case-kpi-lbl">Time to Impact</div></div>
+            <div><div class="case-kpi-num">↑</div><div class="case-kpi-lbl">New Hire Satisfaction</div></div>
+            <div><div class="case-kpi-num">Adopted</div><div class="case-kpi-lbl">Standing Process</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-panel" data-panel="2">
+        <div class="case-card">
+          <div class="case-card-header">
+            <div class="case-title">Global Certification Management Framework</div>
+            <div class="case-tools"><span class="case-tool-pill">AWS</span><span class="case-tool-pill">GCP</span><span class="case-tool-pill">SharePoint</span></div>
+          </div>
+          <div>
+            <div class="case-block"><div class="case-block-label">Planning</div><p>Certification reimbursement and validation for career-advancement credentials like AWS and GCP needed a clearer, faster, auditable path.</p></div>
+            <div class="case-block"><div class="case-block-label">Execution</div><p>Built a structured validation and reimbursement workflow with defined ownership at each stage, removing the back-and-forth that slowed approvals.</p></div>
+          </div>
+          <div>
+            <div class="case-block"><div class="case-block-label">Automation</div><p>Standardised supporting documentation and tracking through SharePoint, cutting manual follow-up at every handoff.</p></div>
+            <div class="case-block"><div class="case-block-label">Business Impact</div><p>Reimbursement turnaround time dropped, and certification records stayed fully audit-ready across the platform portfolio.</p></div>
+          </div>
+          <div class="case-kpis">
+            <div><div class="case-kpi-num">↓</div><div class="case-kpi-lbl">Turnaround Time</div></div>
+            <div><div class="case-kpi-num">AWS/GCP</div><div class="case-kpi-lbl">Certifications Tracked</div></div>
+            <div><div class="case-kpi-num">100%</div><div class="case-kpi-lbl">Documentation Integrity</div></div>
+            <div><div class="case-kpi-num">6+</div><div class="case-kpi-lbl">Platforms Streamlined</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-panel" data-panel="3">
+        <div class="case-card">
+          <div class="case-card-header">
+            <div class="case-title">Learning Analytics Dashboard for Leadership</div>
+            <div class="case-tools"><span class="case-tool-pill">Power BI</span><span class="case-tool-pill">Excel</span><span class="case-tool-pill">Qlik Sense</span></div>
+          </div>
+          <div>
+            <div class="case-block"><div class="case-block-label">Power BI Reporting</div><p>Leadership needed a single, reliable view of training KPIs instead of scattered spreadsheets across teams and platforms.</p></div>
+            <div class="case-block"><div class="case-block-label">Executive Dashboards</div><p>Built MRM/QRM dashboards translating raw completion and engagement data into the metrics leadership actually reviewed.</p></div>
+          </div>
+          <div>
+            <div class="case-block"><div class="case-block-label">Training KPIs &amp; Insights</div><p>Surfaced trends linking training completion to post-training performance — the data behind the 70% performance improvement.</p></div>
+            <div class="case-block"><div class="case-block-label">Continuous Improvement</div><p>Dashboards became a recurring input into annual training calendar and budget decisions, not a one-off report.</p></div>
+          </div>
+          <div class="case-kpis">
+            <div><div class="case-kpi-num">70%</div><div class="case-kpi-lbl">Post-Training Performance Lift</div></div>
+            <div><div class="case-kpi-num">Monthly</div><div class="case-kpi-lbl">Reporting Cadence</div></div>
+            <div><div class="case-kpi-num">3</div><div class="case-kpi-lbl">Tools Integrated</div></div>
+            <div><div class="case-kpi-num">Leadership</div><div class="case-kpi-lbl">Adopted as Standard</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="skills" id="skills">
+  <div class="wrap">
+    <div class="eyebrow">Skills Dashboard</div>
+    <h2 class="section-title">Proficiency, at a glance</h2>
+    <p class="section-sub">Self-assessed proficiency across the tools and disciplines used daily in enterprise learning delivery.</p>
+    <div class="skills-grid" id="skillsGrid"></div>
+  </div>
+</section>
+
+<!-- ============ TECH STACK ============ -->
+<section class="stack" id="stack">
+  <div class="wrap">
+    <div class="eyebrow">Technology Stack</div>
+    <h2 class="section-title">The platforms behind the programs</h2>
+    <div class="stack-cols">
+      <div>
+        <div class="stack-col-title">Learning Platforms</div>
+        <div class="stack-pills">
+          <span class="stack-pill">Articulate 360</span><span class="stack-pill">Moodle</span><span class="stack-pill">LinkedIn Learning</span>
+          <span class="stack-pill">Udemy</span><span class="stack-pill">Pluralsight</span><span class="stack-pill">Google Skills</span>
+          <span class="stack-pill">HSBC GTA</span><span class="stack-pill">Alison</span><span class="stack-pill">Coursera</span><span class="stack-pill">NASSCOM LMS</span>
+        </div>
+      </div>
+      <div>
+        <div class="stack-col-title">Reporting &amp; Analytics</div>
+        <div class="stack-pills">
+          <span class="stack-pill">Power BI</span><span class="stack-pill">Advanced Excel</span><span class="stack-pill">SharePoint</span>
+          <span class="stack-pill">Google Workspace</span><span class="stack-pill">Qlik Sense</span>
+        </div>
+      </div>
+      <div>
+        <div class="stack-col-title">Content Creation</div>
+        <div class="stack-pills">
+          <span class="stack-pill">Canva</span><span class="stack-pill">Microsoft PowerPoint</span><span class="stack-pill">Video Editing Tools</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CERTIFICATIONS & AWARDS ============ -->
+<section class="certs" id="certifications">
+  <div class="wrap">
+    <div class="eyebrow">Credentials &amp; Recognition</div>
+    <h2 class="section-title">Certifications, education &amp; awards</h2>
+    <div class="certs-awards-grid">
+      <div>
+        <div class="cert-list">
+          <div class="cert-item">
+            <div class="cert-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+            <div><div class="cert-name">MBA — Finance</div><div class="cert-issuer">Dr. Babasaheb Ambedkar Marathwada University · 2023–2025</div></div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+            <div><div class="cert-name">Bachelor of Commerce</div><div class="cert-issuer">Deogiri College, Dr. BAMU · 2018–2021</div></div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M9 14l-2 8 5-3 5 3-2-8"/></svg></div>
+            <div><div class="cert-name">CIPD — Organizational L&amp;D</div><div class="cert-issuer">via Udemy</div></div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M9 14l-2 8 5-3 5 3-2-8"/></svg></div>
+            <div><div class="cert-name">Generative AI in Learning &amp; Development</div><div class="cert-issuer">Professional Certification</div></div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M9 14l-2 8 5-3 5 3-2-8"/></svg></div>
+            <div><div class="cert-name">Instructional Design — Foundations &amp; Applications</div><div class="cert-issuer">Professional Certification</div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="award-list">
+          <div class="award-item">
+            <div class="award-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.4 7.2H22l-6 4.4 2.3 7.1L12 16.3 5.7 20.7 8 13.6 2 9.2h7.6z"/></svg></div>
+            <div><div class="award-name">Employee of the Month</div><div class="award-issuer">Aug 2024</div></div>
+          </div>
+          <div class="award-item">
+            <div class="award-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.4 7.2H22l-6 4.4 2.3 7.1L12 16.3 5.7 20.7 8 13.6 2 9.2h7.6z"/></svg></div>
+            <div><div class="award-name">Caught You Doing It Right</div><div class="award-issuer">Jun 2025</div></div>
+          </div>
+          <div class="award-item">
+            <div class="award-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.4 7.2H22l-6 4.4 2.3 7.1L12 16.3 5.7 20.7 8 13.6 2 9.2h7.6z"/></svg></div>
+            <div><div class="award-name">SHABASH Award</div><div class="award-issuer">2021</div></div>
+          </div>
+          <div class="award-item">
+            <div class="award-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.4 7.2H22l-6 4.4 2.3 7.1L12 16.3 5.7 20.7 8 13.6 2 9.2h7.6z"/></svg></div>
+            <div><div class="award-name">Incentivized for NATS Delivery</div><div class="award-issuer">Twice</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="contact-blob"></div>
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <div class="eyebrow">Get In Touch</div>
+        <h2 class="contact-title">Let's talk about building your next learning ecosystem.</h2>
+        <p class="contact-sub">Open to Learning &amp; Development, Talent Development, Learning Analytics, and HR &amp; Training leadership roles.</p>
+        <div class="contact-links">
+          <div class="contact-link">
+            <div class="contact-link-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg></div>
+            <a href="mailto:rajalep.ashwini@gmail.com">rajalep.ashwini@gmail.com</a>
+          </div>
+          <div class="contact-link">
+            <div class="contact-link-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+            <a href="#" target="_blank" rel="noopener">LinkedIn — /in/ashwinirajale</a>
+          </div>
+          <div class="contact-link">
+            <div class="contact-link-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <span>Pune, Maharashtra, India</span>
+          </div>
+        </div>
+        <a href="Ashwini_Rajale_CV.pdf" class="btn btn-primary" download>Download CV</a>
+      </div>
+      <div class="contact-form">
+        <form id="contactForm">
+          <div class="form-row"><label for="cf-name">Name</label><input type="text" id="cf-name" placeholder="Your name" required></div>
+          <div class="form-row"><label for="cf-email">Email</label><input type="email" id="cf-email" placeholder="you@company.com" required></div>
+          <div class="form-row"><label for="cf-subject">Subject</label><input type="text" id="cf-subject" placeholder="What's this about?"></div>
+          <div class="form-row"><label for="cf-message">Message</label><textarea id="cf-message" placeholder="Tell me a bit more..." required></textarea></div>
+          <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+        </form>
+        <p class="form-note">This form is a static demo — connect it to email or a form backend to receive submissions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-logo">Ashwini <span>Rajale</span></div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#case-studies">Work</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-fineprint">© 2026 Ashwini Rajale. All rights reserved.</div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ============ NAV SCROLL STATE ============
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, {passive:true});
+
+// ============ MOBILE MENU ============
+const mobileMenu = document.getElementById('mobileMenu');
+document.getElementById('mobileToggle').addEventListener('click', () => mobileMenu.classList.add('open'));
+document.getElementById('mobileClose').addEventListener('click', () => mobileMenu.classList.remove('open'));
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+// ============ KPI COUNTERS ============
+const counters = document.querySelectorAll('.count');
+function animateCount(el){
+  const target = parseInt(el.getAttribute('data-target'),10);
+  const duration = 1300;
+  const start = performance.now();
+  function tick(now){
+    const progress = Math.min((now-start)/duration, 1);
+    const eased = 1 - Math.pow(1-progress, 3);
+    el.textContent = Math.round(target * eased).toLocaleString();
+    if(progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const kpiObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      animateCount(entry.target);
+      kpiObserver.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.4});
+counters.forEach(el => kpiObserver.observe(el));
+
+// ============ CORE EXPERTISE CARDS ============
+const expertiseData = [
+  ["Learning Strategy","M3 3v18h18M18.7 8l-5.1 5.1-2.8-2.8L7 14"],
+  ["Learning Operations","M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"],
+  ["Program Management","M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"],
+  ["Learning Experience Design","M12 19l7-7 3 3-7 7-3-3zM18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"],
+  ["Talent Development","M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"],
+  ["Employee Experience","M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"],
+  ["Instructional Design","M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"],
+  ["Training Needs Analysis","M11 2a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM21 21l-4.35-4.35"],
+  ["LMS Administration","M22 12h-4l-3 9L9 3l-3 9H2"],
+  ["Learning Analytics","M3 3v18h18M7 16l4-6 4 3 5-7"],
+  ["Vendor Management","M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16zM3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"],
+  ["Stakeholder Management","M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"],
+  ["Employee Engagement","M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"],
+  ["Performance Consulting","M18 20V10M12 20V4M6 20v-6"],
+  ["Change Management","M21 2v6h-6M3 12a9 9 0 0 1 15-6.7L21 8M3 22v-6h6M21 12a9 9 0 0 1-15 6.7L3 16"],
+  ["Leadership Development","M12 2l2.4 7.2H22l-6 4.4 2.3 7.1L12 16.3 5.7 20.7 8 13.6 2 9.2h7.6z"],
+  ["Project Management","M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"],
+  ["Compliance Learning","M9 12l2 2 4-4M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"]
+];
+document.getElementById('expertiseGrid').innerHTML = expertiseData.map(([name, path]) => `
+  <div class="expertise-card">
+    <div class="expertise-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">${path.split('M').filter(Boolean).map(p=>'<path d="M'+p+'"/>').join('')}</svg></div>
+    <div class="expertise-name">${name}</div>
+  </div>
+`).join('');
+
+// ============ SKILLS BARS ============
+const skillsData = [
+  ["Learning Operations",96],["Learning Strategy",92],["Stakeholder Management",94],
+  ["Power BI",88],["Advanced Excel",90],["Canva",85],
+  ["Articulate 360",82],["SharePoint",87],["Instructional Design",90],
+  ["Communication",95],["Leadership",88],["Project Management",91],
+  ["Learning Analytics",86],["Training Coordination",97]
+];
+document.getElementById('skillsGrid').innerHTML = skillsData.map(([name,val],i) => `
+  <div class="skill-row">
+    <div class="skill-row-top"><span>${name}</span><span>${val}%</span></div>
+    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="${val}" id="bar-${i}"></div></div>
+  </div>
+`).join('');
+const skillObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.style.width = entry.target.getAttribute('data-width') + '%';
+      skillObserver.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.3});
+document.querySelectorAll('.skill-bar-fill').forEach(el => skillObserver.observe(el));
+
+// ============ CASE STUDY TABS ============
+const caseTabs = document.querySelectorAll('.case-tab');
+const casePanels = document.querySelectorAll('.case-panel');
+caseTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const idx = tab.getAttribute('data-case');
+    caseTabs.forEach(t => t.classList.remove('active'));
+    casePanels.forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.querySelector(`.case-panel[data-panel="${idx}"]`).classList.add('active');
+  });
+});
+
+// ============ CONTACT FORM ============
+const toast = document.getElementById('toast');
+document.getElementById('contactForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  toast.textContent = "Message captured — connect this form to email to receive it.";
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3600);
+  e.target.reset();
+});
+
+// ============ SCROLL REVEAL ============
+const revealEls = document.querySelectorAll('.expertise-card, .cert-item, .award-item, .tech-card');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.1});
+revealEls.forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(14px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  revealObserver.observe(el);
+});
+</script>
+
+</body>
+</html>
